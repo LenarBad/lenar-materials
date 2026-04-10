@@ -1,0 +1,56 @@
+site_name: Help Materials
+site_description: Practical knowledge base for Linux, SQL, and more
+site_url: https://example.github.io/help-materials
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+nav:
+  - Главная: index.md
+  - Подходы проекта: PROJECT_APPROACHES.md
+  - Процесс контента: CONTENT_WORKFLOW.md
+  - Linux:
+      - Обзор: linux/README.md
+      - Topics:
+          - Basics: linux/topics/basics/README.md
+          - Files: linux/topics/files/README.md
+          - Processes: linux/topics/processes/README.md
+          - Network: linux/topics/network/README.md
+          - Security: linux/topics/security/README.md
+          - Troubleshooting: linux/topics/troubleshooting/README.md
+      - Learning:
+          - Fundamentals: linux/learning/linux-fundamentals.md
+      - Cheatsheets:
+          - Core Commands: linux/cheatsheets/core-commands.md
+      - Recipes:
+          - Common Admin Tasks: linux/recipes/common-admin-tasks.md
+  - SQL:
+      - Обзор: sql/README.md
+      - Topics:
+          - Basics: sql/topics/basics/README.md
+          - Joins: sql/topics/joins/README.md
+          - Aggregation: sql/topics/aggregation/README.md
+          - Indexes: sql/topics/indexes/README.md
+          - Performance: sql/topics/performance/README.md
+          - Troubleshooting: sql/topics/troubleshooting/README.md
+      - Learning:
+          - Fundamentals: sql/learning/sql-fundamentals.md
+      - Cheatsheets:
+          - Query Patterns: sql/cheatsheets/query-patterns.md
+      - Recipes:
+          - Daily Analytics Tasks: sql/recipes/daily-analytics-tasks.md

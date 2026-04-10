@@ -1,0 +1,63 @@
+---
+description: Enforce knowledge-base structure, growth, and content rules
+alwaysApply: true
+---
+
+# Help Materials Architecture Rule
+
+This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and future domains):
+- `topics/` for canonical topic content (source of truth).
+- `learning/`, `cheatsheets/`, `recipes/` for usage modes.
+
+## Core Intent
+- Build practical reference materials for different audiences.
+- Keep content easy to navigate by both topic and consumption mode.
+- Prevent duplication as the project grows.
+
+## Required Structure For Every Domain
+- `<domain>/README.md`
+- `<domain>/topics/<topic>/README.md`
+- `<domain>/learning/*.md`
+- `<domain>/cheatsheets/*.md`
+- `<domain>/recipes/*.md`
+
+## Authoring Rules
+- Put full explanations in `topics/*`.
+- In `learning/cheatsheets/recipes`, keep focused summaries and link back to `topics/*`.
+- Each `topics/<topic>/README.md` must include a "Где использовать" section with links to related mode files.
+- Prefer links over copied text when overlapping content appears.
+
+## Growth Rules
+- Add new domains using the same folder contract.
+- Add new topics as new `topics/<topic>/README.md` modules.
+- Keep naming stable and descriptive; avoid ad-hoc files in domain root.
+- Update `PROJECT_APPROACHES.md` when architecture-level decisions change.
+
+## Default Agent Behavior On Content Requests
+- If user asks to "add a new topic" for a domain, create:
+  - `<domain>/topics/<topic>/README.md`
+  - At least one related mode file update in `learning/`, `cheatsheets/`, or `recipes/` with links.
+- If user asks to "add content", update canonical explanation in `topics/*` first, then add or update mode-specific summaries.
+- Always preserve bidirectional linking:
+  - `topics/*` -> "Где использовать" -> mode files
+  - mode files -> "См. тематические источники" -> `topics/*`
+- Prefer extending existing files before creating new files for near-duplicate scope.
+
+## Markdown Content Contract
+- Every substantial content page should include, when applicable:
+  - `# Title`
+  - `## Цель`
+  - `## Когда использовать`
+  - `## Пошаговый подход`
+  - `## Примеры`
+  - `## Частые ошибки`
+  - `## Проверка результата`
+  - `## Связанные материалы`
+- Keep pages practical and concise; avoid long theory dumps without examples.
+
+## Build And Publish Contract
+- Markdown is the source of truth. Do not manually maintain parallel HTML copies.
+- Use MkDocs Material workflow:
+  - local preview: `mkdocs serve`
+  - build: `mkdocs build`
+  - publish: GitHub Actions workflow for Pages
