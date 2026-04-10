@@ -1,4 +1,4 @@
-# Help Materials Workspace
+# Lenar Materials Workspace
 
 Этот workspace настроен под модель:
 - контент хранится в Markdown;
