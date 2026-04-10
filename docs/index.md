@@ -7,6 +7,5 @@
 - SQL
 
 ## Быстрые ссылки
-- [Подходы к реализации](PROJECT_APPROACHES.md)
 - [Linux](linux/README.md)
 - [SQL](sql/README.md)

@@ -21,10 +21,12 @@ markdown_extensions:
 plugins:
   - search
 
+exclude_docs: |
+  PROJECT_APPROACHES.md
+  CONTENT_WORKFLOW.md
+
 nav:
   - Главная: index.md
-  - Подходы проекта: PROJECT_APPROACHES.md
-  - Процесс контента: CONTENT_WORKFLOW.md
   - Linux:
       - Обзор: linux/README.md
       - Topics:
