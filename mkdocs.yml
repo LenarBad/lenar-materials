@@ -1,6 +1,7 @@
 site_name: Help Materials
 site_description: Practical knowledge base for Linux, SQL, and more
 site_url: https://lenarbad.github.io/lenar-materials
+docs_dir: docs
 
 theme:
   name: material

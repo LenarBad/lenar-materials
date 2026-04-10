@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Help Materials Architecture Rule
 
-This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and future domains):
+This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and future domains) under `docs/`:
 - `topics/` for canonical topic content (source of truth).
 - `learning/`, `cheatsheets/`, `recipes/` for usage modes.
 
@@ -15,11 +15,11 @@ This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and 
 - Prevent duplication as the project grows.
 
 ## Required Structure For Every Domain
-- `<domain>/README.md`
-- `<domain>/topics/<topic>/README.md`
-- `<domain>/learning/*.md`
-- `<domain>/cheatsheets/*.md`
-- `<domain>/recipes/*.md`
+- `docs/<domain>/README.md`
+- `docs/<domain>/topics/<topic>/README.md`
+- `docs/<domain>/learning/*.md`
+- `docs/<domain>/cheatsheets/*.md`
+- `docs/<domain>/recipes/*.md`
 
 ## Authoring Rules
 - Put full explanations in `topics/*`.
@@ -31,7 +31,7 @@ This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and 
 - Add new domains using the same folder contract.
 - Add new topics as new `topics/<topic>/README.md` modules.
 - Keep naming stable and descriptive; avoid ad-hoc files in domain root.
-- Update `PROJECT_APPROACHES.md` when architecture-level decisions change.
+- Update `docs/PROJECT_APPROACHES.md` when architecture-level decisions change.
 
 ## Default Agent Behavior On Content Requests
 - If user asks to "add a new topic" for a domain, create:

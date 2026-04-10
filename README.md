@@ -26,4 +26,4 @@
 - Для агентных сессий действует правило:
   - `.cursor/rules/project-knowledge-architecture.mdc`
 - Целевая архитектура и подходы:
-  - `PROJECT_APPROACHES.md`
+  - `docs/PROJECT_APPROACHES.md`
