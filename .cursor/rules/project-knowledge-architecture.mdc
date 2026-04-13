@@ -3,11 +3,11 @@ description: Enforce knowledge-base structure, growth, and content rules
 alwaysApply: true
 ---
 
-# Help Materials Architecture Rule
+# Lenar Materials Architecture Rule
 
-This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and future domains) under `docs/`:
+This workspace uses a mandatory dual model for each domain under `docs/`:
 - `topics/` for canonical topic content (source of truth).
-- `learning/`, `cheatsheets/`, `recipes/` for usage modes.
+- `learning/`, `cheatsheets/`, `recipes/` for usage modes; для **Linux** страницы команд — в верхнеуровневом `core-commands/` (см. ниже), а не внутри `cheatsheets/`.
 
 ## Core Intent
 - Build practical reference materials for different audiences.
@@ -18,12 +18,14 @@ This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and 
 - `docs/<domain>/README.md`
 - `docs/<domain>/topics/<topic>/README.md`
 - `docs/<domain>/learning/*.md`
-- `docs/<domain>/cheatsheets/*.md`
+- `docs/<domain>/cheatsheets/*.md` (для доменов вроде SQL; у **Linux** каталог `cheatsheets/` не используется для подробных команд)
 - `docs/<domain>/recipes/*.md`
+- для **Linux** дополнительно: `docs/linux/tips/*.md` — **Tips & Tricks**; `docs/linux/core-commands/*.md` — **Core Commands** (один файл на команду + `README.md` — индекс; верхний уровень домена, без вложения в `cheatsheets/`). Порядок как в меню MkDocs: Topics → Learning → Tips & Tricks → Core Commands → Recipes
+- для **SQL** «основы» могут быть разнесены на несколько соседних модулей в `topics/` (например `query-structure/`, `null-and-uniqueness/`, …) плюс обзор `topics/basics/README.md`; каждый модуль — отдельный `README.md` с «Где использовать».
 
 ## Authoring Rules
-- Put full explanations in `topics/*`.
-- In `learning/cheatsheets/recipes`, keep focused summaries and link back to `topics/*`.
+- Put full canonical reference content in `topics/*` (not stubs).
+- In `learning/`, `cheatsheets/` (или `core-commands/` для Linux), `recipes/`, keep focused summaries and link back to `topics/*`.
 - Each `topics/<topic>/README.md` must include a "Где использовать" section with links to related mode files.
 - Prefer links over copied text when overlapping content appears.
 
@@ -32,11 +34,12 @@ This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and 
 - Add new topics as new `topics/<topic>/README.md` modules.
 - Keep naming stable and descriptive; avoid ad-hoc files in domain root.
 - Update `docs/PROJECT_APPROACHES.md` when architecture-level decisions change.
+- Track domain-level topics quality findings and remediation backlog in dedicated internal audit documents.
 
 ## Default Agent Behavior On Content Requests
 - If user asks to "add a new topic" for a domain, create:
   - `<domain>/topics/<topic>/README.md`
-  - At least one related mode file update in `learning/`, `cheatsheets/`, or `recipes/` with links.
+  - At least one related mode file update in `learning/`, `cheatsheets/` (или `core-commands/` для Linux), or `recipes/` with links.
 - If user asks to "add content", update canonical explanation in `topics/*` first, then add or update mode-specific summaries.
 - Always preserve bidirectional linking:
   - `topics/*` -> "Где использовать" -> mode files
@@ -44,16 +47,49 @@ This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and 
 - Prefer extending existing files before creating new files for near-duplicate scope.
 
 ## Markdown Content Contract
-- Every substantial content page should include, when applicable:
+- For `topics/*` pages (reference mode), keep content compact and reference-first. Do not require instructional flow sections.
+- `topics/*` pages should include, when applicable:
   - `# Title`
   - `## Цель`
-  - `## Когда использовать`
-  - `## Пошаговый подход`
   - `## Примеры`
   - `## Частые ошибки`
-  - `## Проверка результата`
   - `## Связанные материалы`
+  - `## Где использовать`
+- For `learning/*` pages, instructional structure is allowed and encouraged, including:
+  - `## Когда использовать`
+  - `## Пошаговый подход`
+  - `## Проверка результата`
 - Keep pages practical and concise; avoid long theory dumps without examples.
+
+## Per-Command Detail Pages (`core-commands/`)
+Use this pattern when a domain stores **one page per command** under `docs/<domain>/core-commands/` (example: `docs/linux/core-commands/pwd.md`), plus **`core-commands/README.md`** as an index.
+
+### Wiring (when adding or changing a command page)
+- Link from the domain commands index / compact list (`docs/<domain>/core-commands/README.md`) to each detail page.
+- Register the page in `mkdocs.yml` (для Linux — группа **Core Commands**; для других областей — **Cheatsheets**, если так принято для домена).
+- Update `core-commands/README.md` to list the command.
+- Preserve bidirectional links with relevant `topics/*` (for example add or keep entries under **Где использовать** on related topic pages).
+- Keep `content.code.copy` enabled in `mkdocs.yml` (Material: copy button on fenced code blocks).
+
+### Required outline (heading order)
+Use this skeleton unless a command truly needs an extra subsection **inside** `## Поведение и параметры`:
+1. `# <command>`
+2. `## Назначение`
+3. `## TLDR` — short invocations only; format like Linux Command Library: one short Russian description line, then a **separate** fenced `bash` block with the command (often one line) so readers can copy cleanly; comments inside code blocks should be short and in Russian where they help.
+4. `## Синтаксис`
+5. `## Поведение и параметры` — **single** coherent section: explain behavior once; put flags/options in tables here; do **not** duplicate the same explanations across separate sections such as “Описание”, “Основные параметры”, and “Ограничения” unless they add genuinely new information.
+6. `## Примеры`
+7. `## См. также`
+8. `## Связанные материалы` — link to the commands index / compact reference (`core-commands/README.md`) and relevant `topics/*`.
+
+Nested `###` headings under `## Поведение и параметры` are allowed when the command naturally splits (for example “проверки” vs “действия” for `find`).
+
+### Language and anti-noise rules
+- Primary language for prose: **Russian**. Prefer plain Russian phrasing over decorative English abbreviations when they do not add clarity (for example avoid unexplained “CWD”, “login name”, “POSIX” stacks; say what you mean in Russian).
+- **No redundant repetition**: `## TLDR` shows minimal examples; `## Поведение и параметры` explains meaning and flags **once**—do not restate the same flag semantics in multiple places.
+
+### Default agent behavior
+- When the user asks to add or normalize per-command pages, follow this section and match the tone/structure of existing approved examples in `docs/linux/core-commands/` (for example `pwd.md`).
 
 ## Build And Publish Contract
 - Markdown is the source of truth. Do not manually maintain parallel HTML copies.
@@ -61,3 +97,12 @@ This workspace uses a mandatory dual model for each domain (`linux`, `sql`, and 
   - local preview: `mkdocs serve`
   - build: `mkdocs build`
   - publish: GitHub Actions workflow for Pages
+- **Site styling** lives in `docs/stylesheets/extra.css` (linked from `mkdocs.yml`). It controls compact typography and code-block layout.
+- **Fenced code blocks in HTML:** default MkDocs output is `<pre><code class="language-…">…</code></pre>` — there is often **no** `div.highlight` wrapper. Rules that target only `.highlight` may apply to nothing. Style **`.md-content .md-typeset pre`** (and optionally `div.highlight` if an extension adds it). Max width for code blocks is tunable via CSS variable `--lenar-code-block-max-width` in `:root` in `extra.css`.
+
+## Public Navigation Contract
+- Public docs navigation should expose learning materials only.
+- Keep internal process docs (for example: `PROJECT_APPROACHES.md`, `CONTENT_WORKFLOW.md`, and audit/backlog docs) excluded from published site navigation.
+- Domain entries should use domain index pages (`docs/<domain>/README.md`) as the clickable entry.
+- Under each domain: `Topics`, `Learning`, `Recipes` as nested groups; cheatsheet-style pages live under `Cheatsheets` (например SQL) или для Linux — верхние пункты **Tips & Tricks** (`tips/…`) и **Core Commands** (`core-commands/`), без лишней вложенности в nav.
+- Domain submenu groups should be collapsed by default unless user explicitly asks otherwise.

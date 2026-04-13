@@ -1,0 +1,41 @@
+# Быстрый pre-flight перед опасной командой
+
+## Индекс
+
+- [Рецепты Linux](README.md)
+
+## Когда использовать
+
+Перед `rm`, массовым `chmod`, правкой сети или firewall на удалённом хосте.
+
+## Пошаговый подход
+
+1. Зафиксировать, под каким пользователем вы действуете и на каком хосте.
+2. Если сессия удалённая и правка может отрезать SSH — иметь запасной доступ (консоль облака, другой маршрут).
+3. Перед разрушительными или массовыми командами сделать предпросмотр (`ls`, список от `find`, dry-run у инструмента).
+
+## Команды
+
+```bash
+whoami
+```
+
+```bash
+hostname
+```
+
+```bash
+pwd
+```
+
+## Проверка результата
+
+Команда завершилась с ожидаемым кодом; окружение осталось доступным.
+
+## См. также
+
+- [Рецепты Linux](README.md)
+- [Basics](../topics/basics/README.md)
+- [whoami](../core-commands/whoami.md), [hostname](../core-commands/hostname.md), [pwd](../core-commands/pwd.md)
+- [Core Commands](../core-commands/README.md)
+- [Linux Fundamentals](../learning/linux-fundamentals.md)

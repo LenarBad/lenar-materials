@@ -6,3 +6,7 @@
 - `linux/topics/basics/README.md`
 - `linux/topics/processes/README.md`
 - `linux/topics/security/README.md`
+
+Дополнительно:
+
+- [Tips & Tricks](../tips/linux-tips-and-tricks.md)

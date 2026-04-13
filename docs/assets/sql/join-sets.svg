@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 258" role="img" aria-labelledby="jt jd">
+  <title id="jt">Схема типов JOIN (два множества строк)</title>
+  <desc id="jd">INNER — только пересечение; LEFT — вся левая таблица и совпадения; RIGHT — вся правая и совпадения; FULL — обе стороны.</desc>
+  <defs>
+    <style>
+      .t { font: 600 13px system-ui, -apple-system, Segoe UI, sans-serif; fill: #263238; }
+      .x { fill: rgba(156, 39, 176, 0.6); stroke: none; }
+      .a-line { fill: none; stroke: #1976d2; stroke-width: 1.5; }
+      .b-line { fill: none; stroke: #388e3c; stroke-width: 1.5; }
+      .a-fill { fill: rgba(33, 150, 243, 0.65); stroke: #1976d2; stroke-width: 1.5; }
+      .b-fill { fill: rgba(76, 175, 80, 0.65); stroke: #388e3c; stroke-width: 1.5; }
+      .full-a { fill: rgba(33, 150, 243, 0.42); stroke: #1976d2; stroke-width: 1.5; }
+      .full-b { fill: rgba(76, 175, 80, 0.42); stroke: #388e3c; stroke-width: 1.5; }
+    </style>
+    <clipPath id="clipA_in"><circle cx="66" cy="72" r="42"/></clipPath>
+    <clipPath id="clipA_left"><circle cx="266" cy="72" r="42"/></clipPath>
+    <clipPath id="clipB_right"><circle cx="510" cy="72" r="42"/></clipPath>
+  </defs>
+  <text x="0" y="18" class="t">INNER JOIN</text>
+  <circle cx="66" cy="72" r="42" class="a-line"/>
+  <circle cx="110" cy="72" r="42" class="b-line"/>
+  <circle cx="110" cy="72" r="42" class="x" clip-path="url(#clipA_in)"/>
+  <text x="200" y="18" class="t">LEFT OUTER</text>
+  <circle cx="266" cy="72" r="42" class="a-fill"/>
+  <circle cx="310" cy="72" r="42" class="b-line"/>
+  <circle cx="310" cy="72" r="42" class="x" clip-path="url(#clipA_left)"/>
+  <text x="400" y="18" class="t">RIGHT OUTER</text>
+  <circle cx="466" cy="72" r="42" class="a-line"/>
+  <circle cx="510" cy="72" r="42" class="b-fill"/>
+  <circle cx="466" cy="72" r="42" class="x" clip-path="url(#clipB_right)"/>
+  <text x="0" y="152" class="t">FULL OUTER</text>
+  <circle cx="66" cy="206" r="42" class="full-a"/>
+  <circle cx="110" cy="206" r="42" class="full-b"/>
+</svg>

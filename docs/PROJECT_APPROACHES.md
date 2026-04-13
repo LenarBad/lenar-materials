@@ -4,8 +4,8 @@
 Проект предназначен для создания и практического использования справочных материалов по разным областям знаний.
 
 Первая итерация:
-- `linux`
-- `sql`
+- `domain-a`
+- `domain-b`
 
 Ключевая идея: материалы лежат в отдельных каталогах по областям, имеют единый формат и легко используются в реальных задачах.
 
@@ -21,11 +21,11 @@
 Подходит для первых недель, когда важно быстро начать.
 
 Пример:
-- `linux/`
+- `domain-a/`
   - `README.md`
   - `commands.md`
   - `troubleshooting.md`
-- `sql/`
+- `domain-b/`
   - `README.md`
   - `queries.md`
   - `performance.md`
@@ -42,14 +42,14 @@
 Подходит для системного роста и долгосрочного использования.
 
 Пример:
-- `linux/`
+- `domain-a/`
   - `basics/`
   - `files/`
   - `processes/`
   - `network/`
   - `security/`
   - `troubleshooting/`
-- `sql/`
+- `domain-b/`
   - `basics/`
   - `joins/`
   - `aggregation/`
@@ -111,8 +111,8 @@
 
 ## 5) Предлагаемая минимальная стартовая реализация (MVP)
 1. Создать каталоги областей:
-   - `linux/`
-   - `sql/`
+   - `<domain-a>/`
+   - `<domain-b>/`
 2. В каждой области завести:
    - `README.md` (главная карта области)
    - `topics/` (измерение B)
@@ -147,7 +147,7 @@
 Ниже базовая структура для первых областей.
 
 ```text
-linux/
+<domain-a>/
   README.md
   topics/
     basics/
@@ -163,13 +163,25 @@ linux/
     troubleshooting/
       README.md
   learning/
-    linux-fundamentals.md
-  cheatsheets/
-    core-commands.md
+    domain-a-fundamentals.md
+  tips/
+    linux-tips-and-tricks.md
+  core-commands/
+    README.md
+    … (по одному .md на команду)
   recipes/
-    common-admin-tasks.md
+    README.md
+    service-wont-start.md
+    disk-space-low.md
+    heavy-process-resources.md
+    service-unreachable-network.md
+    security-updates-single-host.md
+    letsencrypt-certificate.md
+    config-edit-with-rollback.md
+    logs-incident-window.md
+    preflight-dangerous-commands.md
 
-sql/
+<domain-b>/
   README.md
   topics/
     basics/
@@ -185,7 +197,7 @@ sql/
     troubleshooting/
       README.md
   learning/
-    sql-fundamentals.md
+    domain-b-fundamentals.md
   cheatsheets/
     query-patterns.md
   recipes/
@@ -193,6 +205,18 @@ sql/
 ```
 
 Минимальные правила для этой структуры:
-- каждый файл в `learning/cheatsheets/recipes` должен ссылаться на релевантные документы в `topics/`;
+- каждый файл в `learning/`, `tips/` (если есть), `core-commands/` (Linux — подробные команды), `cheatsheets/` (другие домены, например SQL), `recipes/` должен ссылаться на релевантные документы в `topics/`;
 - в `topics/*/README.md` должен быть блок "Где использовать" со ссылками на материалы форматов C;
 - новые области добавляются по той же схеме без изменения общей архитектуры.
+
+## 10) Отдельные аудит-документы
+- Аудит и backlog по topics выносятся в отдельные документы формата `docs/<DOMAIN>_TOPICS_AUDIT.md`.
+
+## 11) Подробные страницы отдельных команд (`core-commands/`)
+Для команд, которые раскрываются отдельной страницей (не только строкой в общей шпаргалке), используется каталог `docs/<domain>/core-commands/`: один файл на команду, **индекс `README.md`** (таблица ссылок на подробные страницы и **компактный справочник** в одном документе), запись в навигации MkDocs и перекрёстные ссылки с темами в `topics/*`.
+
+Для **Linux** в опубликованной навигации MkDocs эти страницы сгруппированы в пункт **Core Commands** на уровне раздела Linux (рядом с Topics, Learning, Recipes), без промежуточной группы Cheatsheets. Страница **Tips & Tricks** вынесена на тот же уровень (отдельно от вложенного пункта Learning) и лежит в каталоге `docs/linux/tips/`, чтобы порядок папок совпадал с порядком пунктов меню.
+
+Полный контракт по структуре заголовков, языку (без лишнего жаргона и без повторов между разделами) и шагам подключения новой страницы зафиксирован в правиле Cursor **Lenar Materials Architecture Rule** (раздел *Per-Command Detail Pages*).
+
+Глобальная вёрстка сайта (в том числе ширина fenced-блоков с командами и компактность текста) настраивается в `docs/stylesheets/extra.css`; см. то же правило, раздел *Build And Publish Contract*.

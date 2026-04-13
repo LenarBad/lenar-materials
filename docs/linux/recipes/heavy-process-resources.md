@@ -1,0 +1,68 @@
+# «Тяжёлый» процесс: CPU или память
+
+## Индекс
+
+- [Рецепты Linux](README.md)
+
+## Когда использовать
+
+Деградация отклика, высокий load, OOM в `dmesg`.
+
+## Пошаговый подход
+
+1. Выявить процессы с наибольшей нагрузкой по CPU или памяти.
+2. Уточнить командную строку и родителя; если это unit под systemd — предпочитать `systemctl`, а не «убийство» PID без контекста.
+3. Завершить процесс мягко (`TERM`), при отсутствии реакции — эскалировать до `KILL` или перезапустить сервис.
+4. Убедиться по логам и метрикам, что нагрузка в норме.
+
+## Команды
+
+```bash
+ps -eo pid,ppid,cmd,%cpu,%mem --sort=-%cpu | head -n 15
+```
+
+Подставьте числовой PID вместо `<PID>`:
+
+```bash
+ps -fp <PID>
+```
+
+Мягкое завершение:
+
+```bash
+kill -TERM <PID>
+```
+
+Короткая пауза перед проверкой, завершился ли процесс:
+
+```bash
+sleep 3
+```
+
+Если после `TERM` процесс всё ещё жив:
+
+```bash
+kill -KILL <PID>
+```
+
+Если процесс относится к unit под systemd, предпочтительно перезапустить сервис и посмотреть журнал:
+
+```bash
+sudo systemctl restart myapp
+```
+
+```bash
+sudo journalctl -u myapp -n 100 --no-pager
+```
+
+## Проверка результата
+
+Нагрузка падает до ожидаемой; сервис остаётся в рабочем состоянии или корректно перезапущен.
+
+## См. также
+
+- [Рецепты Linux](README.md)
+- [Processes](../topics/processes/README.md)
+- [Troubleshooting](../topics/troubleshooting/README.md)
+- [ps](../core-commands/ps.md), [kill](../core-commands/kill.md), [systemctl](../core-commands/systemctl.md), [journalctl](../core-commands/journalctl.md), [dmesg](../core-commands/dmesg.md)
+- [Core Commands](../core-commands/README.md)

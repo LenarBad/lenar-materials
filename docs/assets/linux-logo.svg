@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">Linux Logo</title>
+  <desc id="desc">Minimal Linux-themed circular terminal icon</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <circle cx="110" cy="110" r="98" fill="url(#bg)"/>
+  <circle cx="110" cy="110" r="86" fill="#0b1220" stroke="#374151" stroke-width="2"/>
+  <rect x="52" y="70" width="116" height="80" rx="10" fill="#111827" stroke="#4b5563" stroke-width="2"/>
+  <circle cx="65" cy="84" r="4" fill="#ef4444"/>
+  <circle cx="79" cy="84" r="4" fill="#f59e0b"/>
+  <circle cx="93" cy="84" r="4" fill="#10b981"/>
+  <path d="M74 108 L88 120 L74 132" fill="none" stroke="#60a5fa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="96" y1="132" x2="142" y2="132" stroke="#93c5fd" stroke-width="5" stroke-linecap="round"/>
+  <text x="110" y="178" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#e5e7eb">LINUX</text>
+</svg>

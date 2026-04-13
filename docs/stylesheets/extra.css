@@ -1,0 +1,419 @@
+/* Narrow the right-side table of contents panel */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--secondary {
+    width: 12.5rem;
+  }
+}
+
+/* Let content use full available section width */
+.md-grid {
+  max-width: 100%;
+}
+
+.md-content__inner {
+  max-width: none;
+}
+
+/* Fenced code blocks: max width (tweak one value for the whole site) */
+:root {
+  --lenar-code-block-max-width: 96ch;
+  /* SQL-иллюстрации (join-sets и др.): шире основного текста, по центру */
+  --lenar-sql-figure-max-width: min(100%, 64rem);
+  /* Вложенность текста под ## / ### / #### (вариант 1: только CSS, без полосок у заголовков) */
+  --lenar-content-under-h2: 0.75rem;
+  --lenar-content-under-h3: 1.25rem;
+  --lenar-content-under-h4: 1.75rem;
+  /*
+   * Fenced code: кегль чуть крупнее (шаг от 0.74em), высоту блока держим за счёт
+   * чуть более плотного line-height и меньшего вертикального padding.
+   */
+  --lenar-pre-font-size: 0.78em;
+  --lenar-pre-line-height: 1.24;
+  --lenar-pre-padding-y: 0.24rem;
+  --lenar-pre-padding-x: 0.5rem;
+}
+
+/* Compact body typography (reference-first pages) */
+.md-content .md-typeset {
+  line-height: 1.38;
+  font-size: 0.9rem;
+}
+
+.md-content .md-typeset h1 {
+  margin-bottom: 0.32em;
+}
+
+.md-content .md-typeset :is(h2, h3) {
+  margin-top: 0.78em;
+  margin-bottom: 0.22em;
+  line-height: 1.22;
+}
+
+/*
+ * Структура: отступ слева у блоков контента под заголовками (заголовки без полосок).
+ * Логика: для блока после h4 действуют все селекторы h2~, h3~, h4~ — в каскаде побеждает
+ * последнее объявление (самый «глубокий» уровень). Подстройте rem в :root.
+ */
+/* table — голый <table> из Markdown; .md-typeset__table / .md-typeset__scrollwrap — обёртки Material (если есть) */
+.md-content .md-typeset h2 ~ :is(p, ul, ol, dl, pre, blockquote, .admonition, .tabbed-set, table, .md-typeset__table, .md-typeset__scrollwrap, .highlight, .mermaid) {
+  margin-inline-start: var(--lenar-content-under-h2);
+}
+
+.md-content .md-typeset h3 ~ :is(p, ul, ol, dl, pre, blockquote, .admonition, .tabbed-set, table, .md-typeset__table, .md-typeset__scrollwrap, .highlight, .mermaid) {
+  margin-inline-start: var(--lenar-content-under-h3);
+}
+
+.md-content .md-typeset h4 ~ :is(p, ul, ol, dl, pre, blockquote, .admonition, .tabbed-set, table, .md-typeset__table, .md-typeset__scrollwrap, .highlight, .mermaid) {
+  margin-inline-start: var(--lenar-content-under-h4);
+}
+
+/* Та же лестница отступов, что у абзацев (последний подходящий h2/h3/h4 побеждает по порядку в каскаде) */
+.md-content .md-typeset h2 ~ figure.lenar-sql-figure {
+  margin-inline-start: var(--lenar-content-under-h2);
+}
+
+.md-content .md-typeset h3 ~ figure.lenar-sql-figure {
+  margin-inline-start: var(--lenar-content-under-h3);
+}
+
+.md-content .md-typeset h4 ~ figure.lenar-sql-figure {
+  margin-inline-start: var(--lenar-content-under-h4);
+}
+
+.md-content .md-typeset h2 ~ div.lenar-sql-data-cards {
+  margin-inline-start: var(--lenar-content-under-h2);
+}
+
+.md-content .md-typeset h3 ~ div.lenar-sql-data-cards {
+  margin-inline-start: var(--lenar-content-under-h3);
+}
+
+.md-content .md-typeset h4 ~ div.lenar-sql-data-cards {
+  margin-inline-start: var(--lenar-content-under-h4);
+}
+
+/* Commands Reference: h3 as command titles (not monospace), scoped to this page via h1 id */
+.md-content .md-typeset h1#linux-commands-reference ~ h3 {
+  font-family: var(--md-text-font-family, var(--md-typeset-font-family));
+  font-size: 1.12em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--md-typeset-color);
+  border-left: 0.22rem solid var(--md-accent-fg-color);
+  padding-left: 0.65rem;
+  margin-top: 0.85em;
+  margin-bottom: 0.15em;
+}
+
+/*
+ * Commands Reference: плотнее вертикальные зазоры у описания команды (горизонтальный отступ — общие правила h2~/h3~).
+ */
+.md-content .md-typeset h1#linux-commands-reference ~ h3 + p {
+  margin-top: 0;
+  margin-bottom: 0.08em;
+  box-sizing: border-box;
+}
+
+.md-content .md-typeset h1#linux-commands-reference ~ h3 + p + * {
+  margin-top: 0.08em;
+  margin-bottom: 0.08em;
+  box-sizing: border-box;
+}
+
+/* Несколько подряд блоков кода под одной командой */
+.md-content .md-typeset h1#linux-commands-reference ~ h3 ~ pre {
+  margin-top: 0.08em;
+  margin-bottom: 0.08em;
+  box-sizing: border-box;
+}
+
+/* Tighten Material table wrapper inside command blocks (extra bottom was widening gap to code) */
+.md-content .md-typeset h1#linux-commands-reference ~ h3 + p + * .md-typeset__table {
+  margin-top: 0;
+  margin-bottom: 0.1em;
+}
+
+/* Core Commands: скрыть thead только у таблиц параметров под ### (компактный блок), не у таблицы «Супер коротко» */
+.md-content .md-typeset h1#linux-commands-reference ~ h3 ~ table thead {
+  display: none;
+}
+
+.md-content .md-typeset h4 {
+  margin-top: 0.5em;
+  margin-bottom: 0.18em;
+}
+
+.md-content .md-typeset p {
+  margin-top: 0.28em;
+  margin-bottom: 0.28em;
+  font-size: 0.85rem; /* чуть меньше базы .md-typeset (0.9rem) */
+}
+
+.md-content .md-typeset :is(ul, ol) {
+  margin-top: 0.26em;
+  margin-bottom: 0.26em;
+}
+
+.md-content .md-typeset li {
+  margin-bottom: 0.12em;
+}
+
+.md-content .md-typeset hr {
+  margin: 0.55em 0;
+}
+
+/* Admonitions: tighter vertical rhythm */
+.md-content .md-typeset .admonition {
+  margin-top: 0.45em;
+  margin-bottom: 0.45em;
+  font-size: 0.96em;
+}
+
+/* Tables: compact rows (reference cheatsheets) */
+.md-content .md-typeset table:not([class]) {
+  margin-top: 0.12em;
+  margin-bottom: 0.22em;
+  font-size: 0.82em;
+  line-height: 1.24;
+}
+
+.md-content .md-typeset table:not([class]) :is(th, td) {
+  padding: 0.12rem 0.3rem;
+  vertical-align: top;
+  line-height: 1.24;
+}
+
+.md-content .md-typeset table:not([class]) thead th {
+  padding-top: 0.16rem;
+  padding-bottom: 0.16rem;
+}
+
+.md-content .md-typeset table:not([class]) code {
+  font-size: 0.92em;
+}
+
+.md-content .md-typeset .md-typeset__table {
+  margin: 0.12em 0 0.28em;
+}
+
+/*
+ * Fenced code: MkDocs emits <pre><code> (no div.highlight), so width limits must apply to `pre`.
+ * When pymdown/Material wraps code in .highlight, constrain the wrapper instead.
+ */
+.md-content .md-typeset pre {
+  font-size: var(--lenar-pre-font-size);
+  line-height: var(--lenar-pre-line-height);
+  margin-top: 0.12em;
+  margin-bottom: 0.12em;
+  padding: var(--lenar-pre-padding-y) var(--lenar-pre-padding-x);
+  box-sizing: border-box;
+  overflow-x: auto;
+  width: fit-content;
+  max-width: min(100%, var(--lenar-code-block-max-width, 96ch));
+  font-weight: 700;
+}
+
+/*
+ * Полужирный вес в fenced-блоках: 500/600 часто визуально совпадают с 400 (нет начертания в шрифте).
+ * 700 обычно есть в стеке; font-synthesis подстраховывает синтетическое начертание.
+ */
+.md-content .md-typeset pre code {
+  font-weight: 700;
+  font-synthesis: weight;
+}
+
+/* Optional wrapper (some extensions): outer box shrinks; inner pre fills it */
+.md-content .md-typeset div.highlight {
+  margin-top: 0.12em;
+  margin-bottom: 0.12em;
+  width: fit-content;
+  max-width: min(100%, var(--lenar-code-block-max-width, 96ch));
+  box-sizing: border-box;
+}
+
+.md-content .md-typeset div.highlight pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: var(--lenar-pre-padding-y) var(--lenar-pre-padding-x);
+  overflow-x: auto;
+  font-weight: 700;
+  font-size: var(--lenar-pre-font-size);
+  line-height: var(--lenar-pre-line-height);
+}
+
+.md-content .md-typeset div.highlight pre code {
+  font-weight: 700;
+  font-synthesis: weight;
+}
+
+/* Core Commands → «Супер коротко»: две таблицы на всю ширину контента, поровну; внутри таблицы колонки 35% / 65% */
+.md-content .md-typeset .lenar-super-short-grid {
+  display: grid;
+  gap: 1rem 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  justify-items: stretch;
+  margin-top: 0.35em;
+  margin-bottom: 0.65em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 56em) {
+  .md-content .md-typeset .lenar-super-short-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+/* Ячейки сетки — на всю ширину колонки (Material иногда даёт обёртке width: fit-content) */
+.md-content .md-typeset .lenar-super-short-grid > :is(table, .md-typeset__scrollwrap) {
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  box-sizing: border-box;
+}
+
+.md-content .md-typeset .lenar-super-short-grid .md-typeset__scrollwrap {
+  display: block;
+}
+
+.md-content .md-typeset .lenar-super-short-grid .md-typeset__scrollwrap > .md-typeset__table,
+.md-content .md-typeset .lenar-super-short-grid .md-typeset__scrollwrap > table {
+  width: 100%;
+}
+
+/* Одинаковая структура колонок у обеих таблиц (ширина не «плавает» от содержимого) */
+.md-content .md-typeset .lenar-super-short-grid table {
+  width: 100%;
+  max-width: none;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.md-content .md-typeset .lenar-super-short-grid :is(thead th, tbody td):first-child {
+  width: 35%;
+  max-width: 35%;
+  padding-right: 0.65rem;
+  vertical-align: top;
+}
+
+.md-content .md-typeset .lenar-super-short-grid :is(thead th, tbody td):nth-child(2) {
+  width: 65%;
+  max-width: 65%;
+  vertical-align: top;
+}
+
+.md-content .md-typeset .lenar-super-short-grid tbody td {
+  overflow-wrap: break-word;
+}
+
+/* Learning: Tips & Tricks — блоки admonition в сетке из двух колонок */
+.md-content .md-typeset .lenar-tip-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.85rem 1.1rem;
+  margin: 0.75rem 0 1rem;
+  align-items: stretch;
+}
+
+@media screen and (min-width: 56em) {
+  .md-content .md-typeset .lenar-tip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.md-content .md-typeset .lenar-tip-grid > .admonition {
+  margin: 0;
+  min-width: 0;
+  padding: 0.5rem 0.75rem 0.65rem;
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.12));
+  border-radius: 0.4rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* У Material у .note по умолчанию иконка (синий круг с карандашом) в ::before — для карточек Tips не показываем */
+.md-content .md-typeset .lenar-tip-grid > .admonition .admonition-title::before {
+  display: none;
+  content: none;
+}
+
+.md-content .md-typeset .lenar-tip-grid > .admonition > p.admonition-title {
+  margin: -0.5rem -0.75rem 0.45rem;
+  padding: 0.45rem 0.75rem;
+  padding-inline-start: 0.75rem;
+  font-size: 1.02em;
+  line-height: 1.25;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.1));
+  background: transparent;
+}
+
+.md-content .md-typeset .lenar-tip-grid > .admonition > :last-child {
+  margin-bottom: 0;
+}
+
+/* Код в карточках Tips: по ширине строки (как в остальном сайте), не на всю карточку */
+.md-content .md-typeset .lenar-tip-grid > .admonition :is(pre, .highlight) {
+  width: fit-content;
+  max-width: min(100%, var(--lenar-code-block-max-width, 96ch));
+  box-sizing: border-box;
+}
+
+.md-content .md-typeset .lenar-tip-grid > .admonition .highlight {
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+
+/* SQL / темы: иллюстрации под текстом (горизонтальный отступ слева — см. h2~/h3~/h4~ + figure.lenar-sql-figure) */
+.md-content .md-typeset figure.lenar-sql-figure {
+  margin-block: 0.85rem 1.1rem;
+  margin-inline-end: auto;
+  max-width: var(--lenar-sql-figure-max-width, min(100%, 64rem));
+  width: 100%;
+  text-align: center;
+}
+
+/* MkDocs оборачивает markdown-картинку в <p> внутри figure */
+.md-content .md-typeset figure.lenar-sql-figure > p {
+  margin: 0;
+  text-align: center;
+}
+
+.md-content .md-typeset figure.lenar-sql-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.md-content .md-typeset figure.lenar-sql-figure figcaption {
+  font-size: 0.82rem;
+  line-height: 1.38;
+  color: var(--md-default-fg-color--light, rgba(0, 0, 0, 0.62));
+  margin-top: 0.45rem;
+  margin-inline: auto;
+  max-width: min(100%, 48rem);
+  text-align: center;
+}
+
+/* SQL Joins: учебные таблицы users / orders в двух карточках */
+.md-content .md-typeset .lenar-sql-data-cards > .admonition > p.admonition-title {
+  font-family: var(--md-code-font-family, "Roboto Mono", monospace);
+  font-size: 0.95em;
+  letter-spacing: -0.02em;
+}
+
+.md-content .md-typeset .lenar-sql-data-cards > .admonition table {
+  width: 100%;
+  margin-top: 0.15rem;
+  font-size: 0.88em;
+}
+
+

@@ -7,29 +7,39 @@ theme:
   name: material
   language: ru
   features:
-    - navigation.sections
-    - navigation.expand
+    - navigation.indexes
     - navigation.top
     - search.suggest
     - search.highlight
+    - content.code.copy
 
 markdown_extensions:
   - admonition
+  - attr_list
+  # SuperFences: корректные fenced-блоки внутри admonition и других вложенных контейнеров
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - md_in_html
   - toc:
       permalink: true
 
 plugins:
   - search
 
+extra_css:
+  - stylesheets/extra.css
+
 exclude_docs: |
   PROJECT_APPROACHES.md
   CONTENT_WORKFLOW.md
+  LINUX_TOPICS_AUDIT.md
 
 nav:
   - Главная: index.md
   - Linux:
-      - Обзор: linux/README.md
+      - linux/README.md
       - Topics:
+          - Overview: linux/topics/README.md
           - Basics: linux/topics/basics/README.md
           - Files: linux/topics/files/README.md
           - Processes: linux/topics/processes/README.md
@@ -38,22 +48,71 @@ nav:
           - Troubleshooting: linux/topics/troubleshooting/README.md
       - Learning:
           - Fundamentals: linux/learning/linux-fundamentals.md
-      - Cheatsheets:
-          - Core Commands: linux/cheatsheets/core-commands.md
+      - Tips & Tricks: linux/tips/linux-tips-and-tricks.md
+      - Core Commands:
+          - Обзор и справочник: linux/core-commands/README.md
+          - whoami: linux/core-commands/whoami.md
+          - pwd: linux/core-commands/pwd.md
+          - cd: linux/core-commands/cd.md
+          - hostname: linux/core-commands/hostname.md
+          - ls: linux/core-commands/ls.md
+          - cp: linux/core-commands/cp.md
+          - mv: linux/core-commands/mv.md
+          - mkdir: linux/core-commands/mkdir.md
+          - rm: linux/core-commands/rm.md
+          - find: linux/core-commands/find.md
+          - chmod: linux/core-commands/chmod.md
+          - chown: linux/core-commands/chown.md
+          - stat: linux/core-commands/stat.md
+          - grep: linux/core-commands/grep.md
+          - tail: linux/core-commands/tail.md
+          - du: linux/core-commands/du.md
+          - df: linux/core-commands/df.md
+          - rsync: linux/core-commands/rsync.md
+          - pgrep: linux/core-commands/pgrep.md
+          - ps: linux/core-commands/ps.md
+          - kill: linux/core-commands/kill.md
+          - pkill: linux/core-commands/pkill.md
+          - systemctl: linux/core-commands/systemctl.md
+          - journalctl: linux/core-commands/journalctl.md
+          - sudo: linux/core-commands/sudo.md
+          - dig: linux/core-commands/dig.md
+          - ping: linux/core-commands/ping.md
+          - nc: linux/core-commands/nc.md
+          - curl: linux/core-commands/curl.md
+          - ip: linux/core-commands/ip.md
+          - ss: linux/core-commands/ss.md
+          - free: linux/core-commands/free.md
+          - dmesg: linux/core-commands/dmesg.md
       - Recipes:
-          - Common Admin Tasks: linux/recipes/common-admin-tasks.md
+          - Обзор: linux/recipes/README.md
+          - Сервис не запускается: linux/recipes/service-wont-start.md
+          - Нехватка места на диске: linux/recipes/disk-space-low.md
+          - Безопасная чистка старых логов: linux/recipes/safe-old-logs-cleanup.md
+          - Тяжёлый процесс (CPU/память): linux/recipes/heavy-process-resources.md
+          - Сервис недоступен по сети: linux/recipes/service-unreachable-network.md
+          - Обновления безопасности (один хост): linux/recipes/security-updates-single-host.md
+          - TLS Let's Encrypt (выдача): linux/recipes/letsencrypt-certificate.md
+          - Правка конфига с откатом: linux/recipes/config-edit-with-rollback.md
+          - Логи за окно инцидента: linux/recipes/logs-incident-window.md
+          - Pre-flight перед опасной командой: linux/recipes/preflight-dangerous-commands.md
   - SQL:
-      - Обзор: sql/README.md
+      - sql/README.md
       - Topics:
-          - Basics: sql/topics/basics/README.md
+          - Обзор: sql/topics/README.md
+          - Основы SQL:
+              - Обзор: sql/topics/basics/README.md
+              - Структура запроса: sql/topics/query-structure/README.md
+              - NULL и уникальность: sql/topics/null-and-uniqueness/README.md
+              - Типы, даты и литералы: sql/topics/types-and-literals/README.md
+              - Имена, алиасы и CTE: sql/topics/identifiers-and-cte/README.md
           - Joins: sql/topics/joins/README.md
           - Aggregation: sql/topics/aggregation/README.md
           - Indexes: sql/topics/indexes/README.md
-          - Performance: sql/topics/performance/README.md
-          - Troubleshooting: sql/topics/troubleshooting/README.md
       - Learning:
           - Fundamentals: sql/learning/sql-fundamentals.md
       - Cheatsheets:
           - Query Patterns: sql/cheatsheets/query-patterns.md
       - Recipes:
-          - Daily Analytics Tasks: sql/recipes/daily-analytics-tasks.md
+          - Обзор: sql/recipes/README.md
+          - Повседневная аналитика: sql/recipes/daily-analytics-tasks.md
