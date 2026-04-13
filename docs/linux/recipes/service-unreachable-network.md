@@ -26,7 +26,7 @@ nc -zv example.com 443
 ```
 
 ```bash
-curl -vk https://example.com/health
+curl -vk "$SERVICE_URL/health"
 ```
 
 ```bash
@@ -36,11 +36,3 @@ sudo ss -tulpen
 ## Проверка результата
 
 С клиента успешное подключение к порту и ожидаемый ответ приложения (например health-check).
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Network](../topics/network/README.md)
-- [Security](../topics/security/README.md)
-- [dig](../core-commands/dig.md), [nc](../core-commands/nc.md), [curl](../core-commands/curl.md), [ss](../core-commands/ss.md)
-- [Core Commands](../core-commands/README.md)

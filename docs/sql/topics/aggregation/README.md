@@ -380,14 +380,3 @@ GROUP BY ROLLUP (region, order_date::date);
     ```
 
 </div>
-
-## Связанные материалы
-- [Структура запроса](../query-structure/README.md)
-- [«NULL» и уникальность](../null-and-uniqueness/README.md)
-- [Joins](../joins/README.md)
-- [Индексы](../indexes/README.md)
-
-## Где использовать
-- [SQL Fundamentals](../../learning/sql-fundamentals.md) — короткий учебный вход
-- [Шаблоны запросов](../../cheatsheets/query-patterns.md)
-- [Рецепты: повседневная аналитика](../../recipes/daily-analytics-tasks.md)

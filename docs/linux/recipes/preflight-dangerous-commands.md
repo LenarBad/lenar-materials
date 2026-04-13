@@ -31,11 +31,3 @@ pwd
 ## Проверка результата
 
 Команда завершилась с ожидаемым кодом; окружение осталось доступным.
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Basics](../topics/basics/README.md)
-- [whoami](../core-commands/whoami.md), [hostname](../core-commands/hostname.md), [pwd](../core-commands/pwd.md)
-- [Core Commands](../core-commands/README.md)
-- [Linux Fundamentals](../learning/linux-fundamentals.md)

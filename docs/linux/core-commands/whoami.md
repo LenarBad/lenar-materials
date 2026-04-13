@@ -73,13 +73,3 @@ if [ "$(whoami)" = "root" ]; then
   echo "Запуск от root"
 fi
 ```
-
-## См. также
-
-- `id`, `logname`, `su`, `sudo`
-- `man whoami`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Basics](../topics/basics/README.md)

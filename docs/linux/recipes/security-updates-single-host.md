@@ -44,9 +44,3 @@ sudo dnf upgrade
 ## Проверка результата
 
 Нет застрявших или незавершённых установок пакетов; после ребута (если был) сервисы подняты (`systemctl` / смоук-тесты).
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Security](../topics/security/README.md)
-- [Core Commands](../core-commands/README.md)

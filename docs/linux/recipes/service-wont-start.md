@@ -76,11 +76,3 @@ systemctl is-active myapp
 ```bash
 sudo journalctl -u myapp -n 50 --no-pager
 ```
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Processes](../topics/processes/README.md)
-- [Troubleshooting](../topics/troubleshooting/README.md)
-- [systemctl](../core-commands/systemctl.md), [journalctl](../core-commands/journalctl.md), [tail](../core-commands/tail.md), [ss](../core-commands/ss.md)
-- [Core Commands](../core-commands/README.md)

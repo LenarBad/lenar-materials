@@ -78,9 +78,7 @@ Use this skeleton unless a command truly needs an extra subsection **inside** `#
 3. `## TLDR` — short invocations only; format like Linux Command Library: one short Russian description line, then a **separate** fenced `bash` block with the command (often one line) so readers can copy cleanly; comments inside code blocks should be short and in Russian where they help.
 4. `## Синтаксис`
 5. `## Поведение и параметры` — **single** coherent section: explain behavior once; put flags/options in tables here; do **not** duplicate the same explanations across separate sections such as “Описание”, “Основные параметры”, and “Ограничения” unless they add genuinely new information.
-6. `## Примеры`
-7. `## См. также`
-8. `## Связанные материалы` — link to the commands index / compact reference (`core-commands/README.md`) and relevant `topics/*`.
+6. `## Примеры` — типичные сценарии и команды.
 
 Nested `###` headings under `## Поведение и параметры` are allowed when the command naturally splits (for example “проверки” vs “действия” for `find`).
 

@@ -59,13 +59,3 @@ free [опции]
 ```bash
 free -h && ps -eo pid,cmd,%mem --sort=-%mem | head
 ```
-
-## См. также
-
-- `top`, `vmstat`, `cat /proc/meminfo`
-- `man free`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

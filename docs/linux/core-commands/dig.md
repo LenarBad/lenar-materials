@@ -72,13 +72,3 @@ dig [@сервер] имя [тип] [опции]
 dig example.com +short
 dig @ns1.example.net example.com +short
 ```
-
-## См. также
-
-- `host`, `nslookup`, `resolvectl`
-- `man dig`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Network](../topics/network/README.md)

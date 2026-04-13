@@ -115,9 +115,3 @@
 - [Linux Processes](../processes/README.md)
 - [Linux Security](../security/README.md)
 
-## Где использовать
-- [Linux Fundamentals](../../learning/linux-fundamentals.md)
-- [Tips & Tricks](../../tips/linux-tips-and-tricks.md)
-- [Core Commands](../../core-commands/README.md)
-- [Подробные страницы команд](../../core-commands/README.md) (`whoami`, `pwd`, `cd`, `hostname` и др.)
-- [Рецепты Linux](../../recipes/README.md)

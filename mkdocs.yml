@@ -1,6 +1,5 @@
 site_name: Lenar Materials
 site_description: Practical knowledge base for Linux, SQL, and more
-site_url: https://lenarbad.github.io/lenar-materials
 docs_dir: docs
 
 theme:
@@ -8,7 +7,6 @@ theme:
   language: ru
   features:
     - navigation.indexes
-    - navigation.top
     - search.suggest
     - search.highlight
     - content.code.copy

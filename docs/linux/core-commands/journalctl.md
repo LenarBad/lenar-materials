@@ -73,14 +73,3 @@ journalctl [опции]
 ```bash
 journalctl -u myapp --since "2026-04-11 08:00" --until "2026-04-11 09:00" --no-pager > /tmp/myapp-incident.log
 ```
-
-## См. также
-
-- `systemctl`, `dmesg`, `logger`
-- `man journalctl`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Processes](../topics/processes/README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

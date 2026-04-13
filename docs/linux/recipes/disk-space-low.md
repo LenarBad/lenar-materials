@@ -40,10 +40,3 @@ df -h
 ## Проверка результата
 
 Свободное место и inode в норме; критичные сервисы в `active`.
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Files](../topics/files/README.md)
-- [df](../core-commands/df.md), [du](../core-commands/du.md)
-- [Core Commands](../core-commands/README.md)

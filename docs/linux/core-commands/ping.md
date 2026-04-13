@@ -64,13 +64,3 @@ ping [опции] узел
 ```bash
 ping -c 3 "$(ip route | awk '/default/ {print $3; exit}')"
 ```
-
-## См. также
-
-- `traceroute`, `tracepath`, `dig`, `ss`
-- `man ping`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Network](../topics/network/README.md)

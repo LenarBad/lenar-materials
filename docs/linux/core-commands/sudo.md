@@ -93,13 +93,3 @@ sudo [опции] [команда [аргументы ...]]
 sudo id
 sudo whoami
 ```
-
-## См. также
-
-- `su`, `visudo`, `id`, `ssh`
-- `man sudo`, `man sudoers`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Security](../topics/security/README.md)

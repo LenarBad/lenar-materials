@@ -16,7 +16,7 @@
 | Нужен быстрый DNS-ответ | `dig +short host` | краткая проверка A/AAAA |
 | Нужна детальная DNS-диагностика | `dig host`, `resolvectl query host` | TTL, NS, цепочка резолвинга |
 | Проверить порт удаленного сервиса | `nc -zv host 443` | TCP-порт открыт/закрыт |
-| Проверить HTTP(S)-слой | `curl -vk https://host` | TLS/HTTP ошибки и коды |
+| Проверить HTTP(S)-слой | `curl -vk "$SERVICE_URL"` | TLS/HTTP ошибки и коды |
 | Проверить локальные listeners | `ss -tulpen` | кто слушает порт локально |
 | Проверить путь до узла | `traceroute host`/`tracepath host` | где теряется трафик |
 
@@ -72,7 +72,7 @@
     Уровень HTTP/TLS: редиректы, сертификат, код ответа, тело.
 
     ```bash
-    curl -vk https://example.com/health
+    curl -vk "$SERVICE_URL/health"
     ```
 
 !!! note "Локальный стек IP"
@@ -119,9 +119,3 @@
 - [Linux Troubleshooting](../troubleshooting/README.md)
 - [Сервис недоступен по сети (рецепт)](../../recipes/service-unreachable-network.md)
 
-## Где использовать
-- [Core Commands](../../core-commands/README.md)
-- [Подробные страницы команд](../../core-commands/README.md) (`dig`, `ping`, `nc`, `curl`, `ip`, `ss` и др.)
-- [Рецепты Linux](../../recipes/README.md)
-- [Сервис недоступен по сети](../../recipes/service-unreachable-network.md) — пошаговый runbook
-- [Выдача TLS-сертификата Let's Encrypt](../../recipes/letsencrypt-certificate.md)

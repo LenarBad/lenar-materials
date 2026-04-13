@@ -159,8 +159,3 @@ ls -la /run | rg $S
 - [Linux Security](../security/README.md)
 - [Linux Troubleshooting](../troubleshooting/README.md)
 
-## Где использовать
-- [Linux Fundamentals](../../learning/linux-fundamentals.md)
-- [Core Commands](../../core-commands/README.md)
-- [Подробные страницы команд](../../core-commands/README.md) (`ls`, `cp`, `mv`, `mkdir`, `rm`, `find`, `grep`, `tail`, `chmod`, `chown`, `stat`, `du`, `df`, `rsync`, `pwd`, `cd` и др.)
-- [Рецепты Linux](../../recipes/README.md)

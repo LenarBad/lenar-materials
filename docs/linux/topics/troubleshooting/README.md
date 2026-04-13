@@ -160,7 +160,3 @@ sudo ls -l /etc/myapp /etc/myapp/*
 - [Linux Network](../network/README.md)
 - [Linux Security](../security/README.md)
 
-## Где использовать
-- [Core Commands](../../core-commands/README.md)
-- [Подробные страницы команд](../../core-commands/README.md) (`grep`, `tail`, `df`, `free`, `dmesg`, `journalctl`, `du` и др.)
-- [Рецепты Linux](../../recipes/README.md)

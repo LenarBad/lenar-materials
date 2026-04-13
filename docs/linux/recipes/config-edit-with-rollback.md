@@ -44,11 +44,3 @@ sudo systemctl reload nginx
 ## Проверка результата
 
 Сервис активен; логи без новой ошибки парсинга конфига.
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Linux Files](../topics/files/README.md) — раскладка каталогов и работа с конфигами в `/etc`
-- [Security](../topics/security/README.md)
-- [sudo](../core-commands/sudo.md), [systemctl](../core-commands/systemctl.md), [cp](../core-commands/cp.md)
-- [Core Commands](../core-commands/README.md)

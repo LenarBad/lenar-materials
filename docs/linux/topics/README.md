@@ -10,8 +10,6 @@
 - [Troubleshooting](./troubleshooting/README.md) - системный разбор инцидентов и проверка гипотез.
 
 ## Связанные материалы
-- [Linux](../README.md)
-- [Linux Fundamentals](../learning/linux-fundamentals.md)
 - [Tips & Tricks](../tips/linux-tips-and-tricks.md)
 - [Core Commands](../core-commands/README.md)
 - [Рецепты Linux](../recipes/README.md)

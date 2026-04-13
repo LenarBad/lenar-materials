@@ -73,13 +73,3 @@ find /var/tmp/myapp -type f -name "*.bak" -print
 # проверили список
 find /var/tmp/myapp -type f -name "*.bak" -delete
 ```
-
-## См. также
-
-- `rmdir`, `unlink`, `find`, `mv`, `ls`
-- `man rm`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

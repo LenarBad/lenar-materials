@@ -98,13 +98,3 @@ chmod 660 /etc/myapp/secrets.env
 ```bash
 chmod go-w /var/www/html/index.html
 ```
-
-## См. также
-
-- `chown`, `umask`, `ls -l`, `stat`
-- `man chmod`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

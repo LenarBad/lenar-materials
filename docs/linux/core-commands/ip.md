@@ -72,13 +72,3 @@ ip [опции] объект [команда [аргументы]]
 ```bash
 ip route show default
 ```
-
-## См. также
-
-- `ss`, `ping`, `traceroute`, `nmcli`
-- `man ip`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Network](../topics/network/README.md)

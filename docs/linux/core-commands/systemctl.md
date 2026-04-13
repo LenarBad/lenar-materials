@@ -73,13 +73,3 @@ systemctl [опции] команда [имя ...]
 systemctl is-enabled sshd
 systemctl is-active sshd
 ```
-
-## См. также
-
-- `journalctl`, `loginctl`, `systemd-analyze`
-- `man systemctl`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Processes](../topics/processes/README.md)

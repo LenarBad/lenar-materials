@@ -97,14 +97,3 @@ du -h --max-depth=1 /var/log | sort -h | tail
 ```bash
 du -sh /home/lenar
 ```
-
-## См. также
-
-- `df`, `ls`, `find`, `ncdu` (интерактивный обзор)
-- `man du`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

@@ -11,13 +11,3 @@
 | [Имена, алиасы и CTE](../identifiers-and-cte/README.md) | Кавычки, алиасы и `WHERE`, обобщённые табличные выражения (`WITH`). |
 
 Дальше по сложности — [Joins](../joins/README.md), [Aggregation](../aggregation/README.md) и остальные темы в [обзоре тем](../README.md).
-
-## Связанные материалы
-- [Joins](../joins/README.md)
-- [Aggregation](../aggregation/README.md)
-- [Индексы](../indexes/README.md)
-
-## Где использовать
-- [SQL Fundamentals](../../learning/sql-fundamentals.md)
-- [Шаблоны запросов](../../cheatsheets/query-patterns.md)
-- [Рецепты: повседневная аналитика](../../recipes/daily-analytics-tasks.md)

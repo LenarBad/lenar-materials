@@ -527,11 +527,11 @@ nc -zvw3 10.0.1.20 5432
 | `-I` | только headers | Вывод (пример): первая строка `HTTP/1.1 200 OK` и заголовки |
 
 ```bash
-curl -vk https://example.com/health
+curl -vk "$SERVICE_URL/health"
 ```
 
 ```bash
-curl -I https://example.com
+curl -I "$SERVICE_URL"
 ```
 
 ### ip
@@ -701,7 +701,3 @@ ufw status verbose
 ```bash
 nft list ruleset
 ```
-
-## См. также
-
-- [Linux: темы](../topics/README.md)

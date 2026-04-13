@@ -80,14 +80,3 @@ grep [опции] шаблон [файл ...]
 ```bash
 ss -tlnp | grep ':443'
 ```
-
-## См. также
-
-- `egrep`, `fgrep` (часто обёртки или алиасы), `sed`, `awk`, `less`
-- `man grep`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

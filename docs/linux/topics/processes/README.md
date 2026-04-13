@@ -135,9 +135,3 @@
 - [Linux Network](../network/README.md)
 - [Linux Troubleshooting](../troubleshooting/README.md)
 
-## Где использовать
-- [Linux Fundamentals](../../learning/linux-fundamentals.md)
-- [Core Commands](../../core-commands/README.md)
-- [Подробные страницы команд](../../core-commands/README.md) (`pgrep`, `pkill`, `ps`, `kill`, `systemctl`, `journalctl` и др.)
-- [Рецепты Linux](../../recipes/README.md)
-- [«Тяжёлый» процесс: CPU или память](../../recipes/heavy-process-resources.md)

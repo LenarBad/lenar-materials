@@ -68,13 +68,3 @@ FROM имя ...
     ```
 
 </div>
-
-## Связанные материалы
-- [Структура запроса](../query-structure/README.md)
-- [Joins](../joins/README.md)
-- [Aggregation](../aggregation/README.md)
-
-## Где использовать
-- [Основы SQL — обзор](../basics/README.md)
-- [SQL Fundamentals](../../learning/sql-fundamentals.md)
-- [Шаблоны запросов](../../cheatsheets/query-patterns.md)

@@ -76,13 +76,3 @@ mv [опции] источник ... назначение
 ```bash
 mv ~/projects/app-v1 ~/projects/app
 ```
-
-## См. также
-
-- `cp`, `rm`, `rsync`, `ls`
-- `man mv`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

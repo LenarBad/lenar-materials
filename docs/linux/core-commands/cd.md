@@ -65,14 +65,3 @@ cd [каталог]
 ```bash
 cd /srv/myapp/current || exit 1
 ```
-
-## См. также
-
-- `pwd`, `pushd` / `popd` (в bash), `realpath`
-- `help cd` (bash), документация вашей оболочки
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [pwd](pwd.md) — вывести текущий каталог
-- [Linux Files](../topics/files/README.md)

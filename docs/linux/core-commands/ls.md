@@ -103,13 +103,3 @@ ls -ld /etc
 ```bash
 ls -lt ~/Downloads | head
 ```
-
-## См. также
-
-- `find`, `stat`, `tree`, `du`
-- `man ls`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

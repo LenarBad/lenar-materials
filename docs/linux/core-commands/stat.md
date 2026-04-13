@@ -104,13 +104,3 @@ stat -c "%a %n" /etc/passwd /etc/shadow
 ```bash
 stat -c "%y" /var/log/nginx/access.log
 ```
-
-## См. также
-
-- `ls -l`, `chmod`, `chown`, `readlink`
-- `man stat`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

@@ -68,14 +68,3 @@ ss [опции] [фильтр]
 ```bash
 sudo ss -tlnp 'sport = :5432'
 ```
-
-## См. также
-
-- `lsof`, `netstat`, `ip`, `systemctl`
-- `man ss`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Network](../topics/network/README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

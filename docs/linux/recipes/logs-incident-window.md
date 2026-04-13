@@ -39,10 +39,3 @@ sudo tail -F /var/log/myapp/app.log
 ## Проверка результата
 
 Есть связная цепочка событий до и после сбоя; можно сослаться на строки в постмортеме.
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Troubleshooting](../topics/troubleshooting/README.md)
-- [journalctl](../core-commands/journalctl.md), [tail](../core-commands/tail.md)
-- [Core Commands](../core-commands/README.md)

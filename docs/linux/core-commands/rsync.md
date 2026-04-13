@@ -74,13 +74,3 @@ rsync [опции] источник ... назначение
 rsync -avn --delete /srv/app/current/ /srv/app/staging/
 rsync -av --delete /srv/app/current/ /srv/app/staging/
 ```
-
-## См. также
-
-- `cp`, `scp`, `ssh`, `find`
-- `man rsync`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

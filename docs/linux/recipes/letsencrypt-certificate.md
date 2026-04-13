@@ -92,13 +92,5 @@ echo | openssl s_client -connect example.com:443 -servername example.com 2>/dev/
 
 ## Проверка результата
 
-- Браузер открывает `https://…` без предупреждений о сертификате.
+- Браузер открывает сайт по HTTPS без предупреждений о сертификате.
 - `renew --dry-run` завершается без ошибки; по желанию `systemctl status certbot.timer` показывает активный таймер.
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Security](../topics/security/README.md)
-- [Network](../topics/network/README.md)
-- [systemctl](../core-commands/systemctl.md), [ss](../core-commands/ss.md), [curl](../core-commands/curl.md)
-- [Core Commands](../core-commands/README.md)

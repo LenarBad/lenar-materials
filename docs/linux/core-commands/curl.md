@@ -9,37 +9,37 @@
 Показать тело ответа со страницы.
 
 ```bash
-curl https://example.com
+curl "$SERVICE_URL"
 ```
 
 Только заголовки ответа (HEAD-запрос по сути).
 
 ```bash
-curl -I https://example.com
+curl -I "$SERVICE_URL"
 ```
 
 Подробный вывод: TLS, запрос, заголовки (отладка).
 
 ```bash
-curl -vk https://example.com/health
+curl -vk "$SERVICE_URL/health"
 ```
 
 Следовать редиректам.
 
 ```bash
-curl -L https://short.link/foo
+curl -L "$SHORT_URL"
 ```
 
 Сохранить вывод в файл.
 
 ```bash
-curl -fsS -o /tmp/page.html https://example.com
+curl -fsS -o /tmp/page.html "$SERVICE_URL"
 ```
 
 POST с телом JSON и заголовком Content-Type.
 
 ```bash
-curl -X POST -H 'Content-Type: application/json' -d '{"ok":true}' https://api.example/v1/ping
+curl -X POST -H 'Content-Type: application/json' -d '{"ok":true}' "$API_URL/v1/ping"
 ```
 
 ## Синтаксис
@@ -72,15 +72,5 @@ curl [опции] URL ...
 Проверить health-endpoint и HTTP-код.
 
 ```bash
-curl -sS -o /dev/null -w "%{http_code}\n" https://api.example/health
+curl -sS -o /dev/null -w "%{http_code}\n" "$API_URL/health"
 ```
-
-## См. также
-
-- `wget`, `openssl s_client`, `nc`
-- `man curl`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Network](../topics/network/README.md)

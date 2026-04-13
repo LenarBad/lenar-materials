@@ -71,14 +71,3 @@ pkill [опции] шаблон
 pgrep -af mybatch
 pkill -TERM -f "mybatch --job nightly"
 ```
-
-## См. также
-
-- `pgrep`, `kill`, `killall`, `ps`, `systemctl`
-- `man pkill`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [pgrep](pgrep.md) — тот же отбор процессов, без отправки сигнала
-- [Linux Processes](../topics/processes/README.md)

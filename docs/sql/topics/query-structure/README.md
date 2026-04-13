@@ -54,19 +54,3 @@ SQL-запрос описывает **какой** результат нужен
     ```
 
 </div>
-
-## Частые ошибки
-- Ожидание стабильного порядка строк без `ORDER BY`.
-- Путаница между фильтром **до** группировки (`WHERE`) и **после** (`HAVING`) — см. [Aggregation](../aggregation/README.md).
-
-## Связанные материалы
-- [«NULL» и уникальность](../null-and-uniqueness/README.md)
-- [Типы, даты и литералы](../types-and-literals/README.md)
-- [Имена, алиасы и CTE](../identifiers-and-cte/README.md)
-- [Joins](../joins/README.md)
-- [Aggregation](../aggregation/README.md)
-
-## Где использовать
-- [Основы SQL — обзор](../basics/README.md)
-- [SQL Fundamentals](../../learning/sql-fundamentals.md)
-- [Шаблоны запросов](../../cheatsheets/query-patterns.md)

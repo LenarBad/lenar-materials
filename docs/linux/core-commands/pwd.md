@@ -79,14 +79,3 @@ dir="$(pwd)"
 pwd -L
 pwd -P
 ```
-
-## См. также
-
-- `cd`, `realpath`, `readlink`
-- `help pwd` (встроенная команда), `man pwd`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [cd](cd.md) — смена текущего каталога
-- [Linux Files](../topics/files/README.md)

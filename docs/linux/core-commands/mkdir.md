@@ -59,13 +59,3 @@ mkdir [опции] каталог ...
 ```bash
 mkdir -pm 755 /opt/myapp/{bin,lib,etc}
 ```
-
-## См. также
-
-- `rmdir`, `rm`, `chmod`, `install`, `mktemp`
-- `man mkdir`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

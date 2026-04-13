@@ -70,13 +70,3 @@ tail [опции] [файл ...]
 ```bash
 tail -n 200 /var/log/myapp/app.log | grep -i error
 ```
-
-## См. также
-
-- `head`, `less`, `journalctl`, `grep`
-- `man tail`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

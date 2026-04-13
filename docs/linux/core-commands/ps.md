@@ -65,13 +65,3 @@ ps [опции]
 ```bash
 ps -eo pid,cmd,%mem --sort=-%mem | head -n 15
 ```
-
-## См. также
-
-- `top`, `htop`, `pgrep`, `kill`
-- `man ps`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Processes](../topics/processes/README.md)

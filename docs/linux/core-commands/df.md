@@ -65,14 +65,3 @@ df [опции] [путь ...]
 ```bash
 df -h | awk 'NR==1 || $5+0 > 80 {print}'
 ```
-
-## См. также
-
-- `du`, `lsblk`, `mount`
-- `man df`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

@@ -66,13 +66,3 @@ nc [опции] [хост [порт]]
 ```bash
 nc -zv 127.0.0.1 6379
 ```
-
-## См. также
-
-- `ss`, `curl`, `telnet`
-- `man nc`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Network](../topics/network/README.md)

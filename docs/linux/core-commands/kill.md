@@ -72,14 +72,3 @@ kill -TERM 1234
 sleep 3
 kill -KILL 1234
 ```
-
-## См. также
-
-- `killall`, `pkill`, `pgrep`, `ps`, `systemctl`
-- `man kill`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [pkill](pkill.md) — завершение по имени или шаблону, без PID
-- [Linux Processes](../topics/processes/README.md)

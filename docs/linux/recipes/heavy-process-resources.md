@@ -58,11 +58,3 @@ sudo journalctl -u myapp -n 100 --no-pager
 ## Проверка результата
 
 Нагрузка падает до ожидаемой; сервис остаётся в рабочем состоянии или корректно перезапущен.
-
-## См. также
-
-- [Рецепты Linux](README.md)
-- [Processes](../topics/processes/README.md)
-- [Troubleshooting](../topics/troubleshooting/README.md)
-- [ps](../core-commands/ps.md), [kill](../core-commands/kill.md), [systemctl](../core-commands/systemctl.md), [journalctl](../core-commands/journalctl.md), [dmesg](../core-commands/dmesg.md)
-- [Core Commands](../core-commands/README.md)

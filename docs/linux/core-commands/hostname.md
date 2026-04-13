@@ -84,13 +84,3 @@ echo "Запуск на $h"
 hostname
 hostname -f
 ```
-
-## См. также
-
-- `hostnamectl` (systemd), настройки `/etc/hostname`, DNS
-- `man hostname`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Basics](../topics/basics/README.md)

@@ -11,7 +11,7 @@
 3. `pip install -r requirements.txt`
 4. `mkdocs serve`
 
-Локальный URL обычно: `http://127.0.0.1:8000`.
+Локальный адрес обычно: `127.0.0.1:8000`.
 
 ## Сборка
 - `mkdocs build`

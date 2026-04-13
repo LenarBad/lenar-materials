@@ -59,13 +59,3 @@ dmesg [опции]
 ```bash
 dmesg -T | rg -i 'out of memory|oom|killed process' | tail
 ```
-
-## См. также
-
-- `journalctl`, `lspci`, `lsblk`, `smartctl`
-- `man dmesg`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Troubleshooting](../topics/troubleshooting/README.md)

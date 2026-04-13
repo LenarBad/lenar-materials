@@ -66,14 +66,3 @@ pgrep [опции] шаблон
 pgrep -af "myapp"
 ps -fp "$(pgrep -f '^/opt/myapp/bin/server' | head -n1)"
 ```
-
-## См. также
-
-- `ps`, `pidof`, `kill`, `pkill`
-- `man pgrep`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [pkill](pkill.md) — те же шаблоны, но с отправкой сигнала
-- [Linux Processes](../topics/processes/README.md)

@@ -90,13 +90,3 @@ sudo chown -R app:app /var/lib/myapp
 ls -l /etc/myapp.conf
 sudo chown root:myapp /etc/myapp.conf
 ```
-
-## См. также
-
-- `chmod`, `chgrp`, `id`, `ls -l`
-- `man chown`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)

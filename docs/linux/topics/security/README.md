@@ -103,8 +103,3 @@ sudo journalctl -u ssh -n 100 --no-pager
 - [Linux Files](../files/README.md)
 - [Linux Troubleshooting](../troubleshooting/README.md)
 
-## Где использовать
-- [Linux Fundamentals](../../learning/linux-fundamentals.md)
-- [Подробные страницы команд](../../core-commands/README.md) (`sudo` и др.)
-- [Рецепты Linux](../../recipes/README.md)
-- [Выдача TLS-сертификата Let's Encrypt](../../recipes/letsencrypt-certificate.md)

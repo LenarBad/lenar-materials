@@ -18,5 +18,3 @@
 - Медленно или странный план — проверьте структуру запроса и индексы: [Структура запроса](../topics/query-structure/README.md), [Indexes](../topics/indexes/README.md).
 - «Не сходятся цифры» или дубли — перепроверьте ключи соединения и агрегирование: [Joins](../topics/joins/README.md), [Aggregation](../topics/aggregation/README.md).
 
-## Снаружи проекта
-- [SQL Academy — курс и тренажёр](https://sql-academy.org/ru/guide) — дополнительный интерактивный трек; кратко о внешних источниках — в [разделе SQL](../README.md).

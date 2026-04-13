@@ -80,13 +80,3 @@ cp [опции] источник ... назначение
 ```bash
 cp -i /etc/myapp/config.yml /etc/myapp/config.yml.bak
 ```
-
-## См. также
-
-- `mv`, `install`, `rsync`, `ln`, `ls`
-- `man cp`
-
-## Связанные материалы
-
-- [Core Commands](README.md)
-- [Linux Files](../topics/files/README.md)
