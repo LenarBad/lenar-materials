@@ -328,6 +328,11 @@
   }
 }
 
+/* Вариант для секций с одной карточкой: всегда на всю ширину */
+.md-content .md-typeset .lenar-tip-grid.lenar-tip-grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .md-content .md-typeset .lenar-tip-grid > .admonition {
   margin: 0;
   min-width: 0;

@@ -21,12 +21,11 @@ This workspace uses a mandatory dual model for each domain under `docs/`:
 - `docs/<domain>/cheatsheets/*.md` (для доменов вроде SQL; у **Linux** каталог `cheatsheets/` не используется для подробных команд)
 - `docs/<domain>/recipes/*.md`
 - для **Linux** дополнительно: `docs/linux/tips/*.md` — **Tips & Tricks**; `docs/linux/core-commands/*.md` — **Core Commands** (один файл на команду + `README.md` — индекс; верхний уровень домена, без вложения в `cheatsheets/`). Порядок как в меню MkDocs: Topics → Learning → Tips & Tricks → Core Commands → Recipes
-- для **SQL** «основы» могут быть разнесены на несколько соседних модулей в `topics/` (например `query-structure/`, `null-and-uniqueness/`, …) плюс обзор `topics/basics/README.md`; каждый модуль — отдельный `README.md` с «Где использовать».
+- для **SQL** «основы» могут быть разнесены на несколько соседних модулей в `topics/` (например `query-structure/`, `null-and-uniqueness/`, …) плюс обзор `topics/basics/README.md`; каждый модуль — отдельный `README.md`.
 
 ## Authoring Rules
 - Put full canonical reference content in `topics/*` (not stubs).
 - In `learning/`, `cheatsheets/` (или `core-commands/` для Linux), `recipes/`, keep focused summaries and link back to `topics/*`.
-- Each `topics/<topic>/README.md` must include a "Где использовать" section with links to related mode files.
 - Prefer links over copied text when overlapping content appears.
 
 ## Growth Rules
@@ -41,9 +40,7 @@ This workspace uses a mandatory dual model for each domain under `docs/`:
   - `<domain>/topics/<topic>/README.md`
   - At least one related mode file update in `learning/`, `cheatsheets/` (или `core-commands/` для Linux), or `recipes/` with links.
 - If user asks to "add content", update canonical explanation in `topics/*` first, then add or update mode-specific summaries.
-- Always preserve bidirectional linking:
-  - `topics/*` -> "Где использовать" -> mode files
-  - mode files -> "См. тематические источники" -> `topics/*`
+- Always preserve linking from mode files to relevant `topics/*` (for example via "См. тематические источники").
 - Prefer extending existing files before creating new files for near-duplicate scope.
 
 ## Markdown Content Contract
@@ -53,8 +50,6 @@ This workspace uses a mandatory dual model for each domain under `docs/`:
   - `## Цель`
   - `## Примеры`
   - `## Частые ошибки`
-  - `## Связанные материалы`
-  - `## Где использовать`
 - For `learning/*` pages, instructional structure is allowed and encouraged, including:
   - `## Когда использовать`
   - `## Пошаговый подход`
@@ -68,7 +63,7 @@ Use this pattern when a domain stores **one page per command** under `docs/<doma
 - Link from the domain commands index / compact list (`docs/<domain>/core-commands/README.md`) to each detail page.
 - Register the page in `mkdocs.yml` (для Linux — группа **Core Commands**; для других областей — **Cheatsheets**, если так принято для домена).
 - Update `core-commands/README.md` to list the command.
-- Preserve bidirectional links with relevant `topics/*` (for example add or keep entries under **Где использовать** on related topic pages).
+- Preserve links with relevant `topics/*` where they help navigation.
 - Keep `content.code.copy` enabled in `mkdocs.yml` (Material: copy button on fenced code blocks).
 
 ### Required outline (heading order)

@@ -1,5 +1,5 @@
 site_name: Lenar Materials
-site_description: Practical knowledge base for Linux, SQL, and more
+site_description: Practical knowledge base for Linux, SQL, Docker, and more
 docs_dir: docs
 
 theme:
@@ -114,3 +114,19 @@ nav:
       - Recipes:
           - Обзор: sql/recipes/README.md
           - Повседневная аналитика: sql/recipes/daily-analytics-tasks.md
+  - Docker:
+      - docker/README.md
+      - Topics:
+          - Обзор: docker/topics/README.md
+          - Образы и контейнеры: docker/topics/images-and-containers/README.md
+          - Сборка и Dockerfile: docker/topics/build-and-dockerfile/README.md
+          - Тома и данные: docker/topics/volumes-and-data/README.md
+          - Сеть контейнеров: docker/topics/networking/README.md
+          - Docker Compose: docker/topics/compose/README.md
+      - Learning:
+          - Fundamentals: docker/learning/docker-fundamentals.md
+      - Cheatsheets:
+          - CLI: docker/cheatsheets/docker-cli.md
+      - Recipes:
+          - Обзор: docker/recipes/README.md
+          - Контейнер не стартует: docker/recipes/container-wont-start.md

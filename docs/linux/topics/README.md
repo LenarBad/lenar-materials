@@ -8,8 +8,3 @@
 - [Network](./network/README.md) - быстрая сетевая диагностика: host, port, DNS, routes.
 - [Security](./security/README.md) - минимальные права, SSH-практики, обновления и аудит.
 - [Troubleshooting](./troubleshooting/README.md) - системный разбор инцидентов и проверка гипотез.
-
-## Связанные материалы
-- [Tips & Tricks](../tips/linux-tips-and-tricks.md)
-- [Core Commands](../core-commands/README.md)
-- [Рецепты Linux](../recipes/README.md)
