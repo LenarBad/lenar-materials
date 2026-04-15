@@ -1,5 +1,5 @@
 site_name: Lenar Materials
-site_description: Practical knowledge base for Linux, SQL, Docker, and more
+site_description: Practical knowledge base for Linux, SQL, Docker, Java, and more
 docs_dir: docs
 
 theme:
@@ -130,3 +130,48 @@ nav:
       - Recipes:
           - Обзор: docker/recipes/README.md
           - Контейнер не стартует: docker/recipes/container-wont-start.md
+  - Структуры данных в Java:
+      - java-data-structures/README.md
+      - Topics:
+          - Обзор: java-data-structures/topics/README.md
+          - Collections Framework: java-data-structures/topics/collections-framework/README.md
+          - List: java-data-structures/topics/list/README.md
+          - Set: java-data-structures/topics/set/README.md
+          - Map: java-data-structures/topics/map/README.md
+          - "Queue, Deque": java-data-structures/topics/queue-and-deque/README.md
+          - Равенство и порядок: java-data-structures/topics/equality-and-ordering/README.md
+          - Обход и изменение: java-data-structures/topics/iteration-and-modification/README.md
+          - Алгоритмическая сложность: java-data-structures/topics/algorithmic-complexity/README.md
+          - Поиск и сортировка: java-data-structures/topics/search-and-sorting-with-collections/README.md
+          - Collections и Arrays: java-data-structures/topics/collections-utility-methods/README.md
+          - Хеш-паттерны: java-data-structures/topics/hash-based-patterns/README.md
+          - Два указателя и sliding window: java-data-structures/topics/two-pointers-and-sliding-window/README.md
+          - PriorityQueue и Top-K: java-data-structures/topics/priority-queue-and-top-k/README.md
+      - Learning:
+          - Fundamentals: java-data-structures/learning/java-data-structures-fundamentals.md
+      - Cheatsheets:
+          - Collections quick reference: java-data-structures/cheatsheets/java-collections-quick-reference.md
+      - Recipes:
+          - Обзор: java-data-structures/recipes/README.md
+          - Concurrent modification при итерации: java-data-structures/recipes/concurrent-modification-when-iterating.md
+  - ООП в Java:
+      - oop/README.md
+      - Topics:
+          - Обзор: oop/topics/README.md
+          - Принципы ООП: oop/topics/oop-principles/README.md
+          - Инкапсуляция: oop/topics/encapsulation/README.md
+          - Абстракция: oop/topics/abstraction/README.md
+          - Наследование: oop/topics/inheritance/README.md
+          - Композиция: oop/topics/composition/README.md
+          - Полиморфизм: oop/topics/polymorphism/README.md
+          - Interface vs Abstract Class: oop/topics/interface-vs-abstract-class/README.md
+          - SOLID на практике: oop/topics/solid-in-practice/README.md
+      - Learning:
+          - Fundamentals: oop/learning/oop-fundamentals.md
+      - Cheatsheets:
+          - Quick Reference: oop/cheatsheets/oop-quick-reference.md
+      - Recipes:
+          - Обзор: oop/recipes/README.md
+          - Композиция вместо наследования: oop/recipes/composition-over-inheritance-refactor.md
+          - Замена if-else полиморфизмом: oop/recipes/replace-if-else-with-polymorphism.md
+          - Декомпозиция god object: oop/recipes/decompose-god-object.md
